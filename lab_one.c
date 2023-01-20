@@ -24,12 +24,18 @@ printf("E:\n*****\n****\n***\n**\n*");
 int digits;
 
 scanf("%i", &digits);
-int first = digits/10000;
-int second = digits;
-int third;
-int fourth;
-int fifth;
-
+int first = digits/10000);
+printf("i", first);
+printf("i", second);
+printf("i", third);
+printf("i", fourth);
+printf("i", fifth);
 
 return 0;
 }
+
+
+
+
+
+

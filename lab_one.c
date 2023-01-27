@@ -1,8 +1,6 @@
-#include <stdio.h>
+#include <iostream>
 
-main()
-{
-
+int main() {
 //Declare variables
 int int1;
 int int2;
@@ -19,23 +17,20 @@ printf("A:\nThis is a C program\n");
 printf("B:\nThis is\na C program\n");
 printf("C:\nThis\nis\na\nC\nprogram\n");
 printf("D:\nThis\tis\ta\tC\tprogram\n");
-printf("E:\n*****\n****\n***\n**\n*");
+printf("E:\n*****\n****\n***\n**\n*\n");
 
+
+
+printf("Enter a five digit integer\n");
 int digits;
-
 scanf("%i", &digits);
-int first = digits/10000);
-printf("i", first);
-printf("i", second);
-printf("i", third);
-printf("i", fourth);
-printf("i", fifth);
+
+int a = (digits/10000);
+int b = (digits/1000%10);
+int c = (digits/100%10);
+int d = (digits/10%10);
+int e = (digits%10);
+printf("%3d %3d %3d %3d %3d",a,b,c,d,e);
 
 return 0;
 }
-
-
-
-
-
-

@@ -23,18 +23,19 @@ int main() {
             else {// if the sum is less than 10, no carry
                 ca=0; //
             }
-            a=a/10; // remove last digit frob a
+            a=a/10; // remove last digit from a
             b=b/10; // remove last digit from b
         }
 
         if(cc == 0)
             printf("No carries are required");
         else
-            printf("\n%d carries required", cc);
+            printf("%d ", cc);
+            printf("carries required");
 
         printf("\nThe addition of two numbers is %d", r);
         printf("\nEnter two numbers\n");
-        scanf("%d %d",&a,&b);
+        scanf("%d %d",&a,&b); //repeat
     }
 
     return 0;

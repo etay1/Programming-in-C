@@ -94,6 +94,7 @@ int main() {
     free((void*)ptr);
     ptr = (void*)malloc(sizeof(double));
     printf("Value of ptr post reallocation : %p \n",ptr);
-
+    printf("Value of *ptr : %lf \n",*ptr);
+    
     return 0;
 }

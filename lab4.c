@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
 
@@ -73,6 +74,24 @@ int main() {
     intptr1 = &i2;
     printf("(intptr1 == intptr2) : <%d>\n", (intptr1 == intptr2));
     printf("(*intptr1 == *intptr2) : <%d>\n", (*intptr1 == *intptr2));
-    
+
+    printf("\n10.\tThe malloc function assigns new memory to a pointer variable.\n"
+           "It returns type void * so you must typecast it to the correct type.\n"
+           "Declare a new pointer to type double (ptr) and assign a block of memory to this pointer using malloc (sizeof (double)).\n"
+           "Using the pointer, assign the value of 3.1416 to this block of memory. Record the following information:\n");
+    double* ptr = (double*)malloc(sizeof (double));
+    *ptr = 3.1416;
+    printf("Value of ptr : %p \n",ptr);
+    printf("Value of *ptr : %lf \n",*ptr);
+
+    printf("\n11.\tTo deallocate the dynamic memory of a pointer, we use the free () function.\n"
+           "This function requires us to typecast our pointer to type void *.\n"
+           "The syntax is: free ( (void *) ptr); Deallocate the memory for ptr and reallocate it again.\n"
+           "Is the value of ptr the same as it was in question 10? No it isn't\n");
+
+    free((void*)ptr);
+    ptr = (double*)malloc(sizeof(double));
+    printf("Value of ptr post reallocation : %p \n",ptr);
+
     return 0;
 }

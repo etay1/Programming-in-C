@@ -1,25 +1,23 @@
+// Elijah Tay Lab 5
 #include <stdio.h>
 #include <stdlib.h>
 
-// Elijah Tay Lab 5
-
 int my_strlen(char s[]) {
-    int counter = 0;
-    for (int i = 0; s[i] != '\0' ; ++i) {
-        counter ++;
-    }
-    return counter;
+    int c = 0;
+    for (int i = 0; s[i] != '\0' ; i++)
+        c++;
+    return c;
 }
 
-int my_strcpy(char s[], char t[]) {
-    int i;
-    int len_s = my_strlen(s);
-    int len_t = my_strlen(t);
+int my_strcpy (char s[],char t[]) {
+    int a = my_strlen(s);
+    int b = my_strlen(t);
+    int i = 0;
 
-    if (len_s < len_t)
+    if(a < b)
         return -1;
 
-    for (i = 0; s[i] != '\0'; ++i)
+    for(i = 0; i < b; i++)
         s[i] = t[i];
 
     s[i] = '\0';
@@ -27,21 +25,21 @@ int my_strcpy(char s[], char t[]) {
 }
 
 char* my_strcat(char s[], char t[]) {
-
-    int len_s = my_strlen(s), len_t = my_strlen(t),
-            total_length = len_s + len_t + 1, i;
+    int ls = my_strlen(s);
+    int lt = my_strlen(t);
+    int tl = ls + lt + 1, i;
 
     //allocate memory for string
-    char new_array[total_length + 1];
-    char *new = calloc(total_length, sizeof(char));
+    char new_array[tl + 1];
+    char *new = calloc(tl, sizeof(char));
 
-    for (i = 0; i < len_s; i++)
+    for (i = 0; i < ls; i++)
         new[i] = s[i];
 
-    for (i = 0; i < len_t; i++)
-        new[len_s + i] = t[i];
+    for (i = 0; i < lt; i++)
+        new[ls + i] = t[i];
 
-    new[total_length - 1] = '\0';
+    new[tl - 1] = '\0';
 
     return new;
 }
@@ -53,7 +51,6 @@ void my_strreverse(char s[]) {
     b = s;
     e = s;
 
-    // point to last char
     for (i = 0; i < len - 1; i++)
         e++;
 
@@ -74,18 +71,20 @@ int main() {
     printf("\na: %s\nb: %s\nc: %s\n", a, b, c);
 
     //PSET1
-    printf("\nLength of a: %d", my_strlen(a));
+    printf("\nLength of a = %d", my_strlen(a));
 
     //PSET2
     printf("\nCan be copied: %d", my_strcpy(a, c));
-    printf("\nA copy C: %s", a);
+    printf("\nCopy string c into a\n a: %s", a);
+    //PSET2 fail
+    printf("\nFail test for Can be copied c into b: %d", my_strcpy(b, c));
 
     //PSET3
-    char s[] = "temp";
     char *q = my_strcat(b, c);
-    printf("\nConcat b + c: %s", q);
+    printf("\nConcat b + c = %s", q);
 
     //PSET4
     my_strreverse(b);
-    printf("\nreverse b: %s\n", b);
+    printf("\nReverse b = %s\n", b);
+    return 0;
 }
